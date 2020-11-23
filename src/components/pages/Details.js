@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { InfoConsumer } from "../context";
 import Footer from "../layouts/Footer";
 import styled from "styled-components";
+import Reviews from '../Reviews';
 
 class Details extends Component {
   render() {
@@ -72,7 +73,7 @@ class Details extends Component {
                       role="tab"
                       data-toggle="tab"
                     >
-                      Reviews
+                      <Reviews />
                     </a>
                   </li>
                   {/* Map Link */}
