@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { InfoConsumer } from "../context";
 import Footer from "../layouts/Footer";
+import styled from "styled-components";
 
 class Details extends Component {
   render() {
@@ -20,7 +21,7 @@ class Details extends Component {
 
           return (
             <React.Fragment>
-              <div className="container-fluid align-items-center">
+              <HeaderDetails className="container-fluid align-items-center">
                 <h1 className="display-1 font-weight-bold">{headerTitle}</h1>
                 <h4 className="display-5">{headerSubTitle}</h4>
                 <p>{headerText}</p>
@@ -47,15 +48,16 @@ class Details extends Component {
                     </div>
                   </div>
                 </div>
-              </div>
+              </HeaderDetails>
+              
               {/* nav link */}
               <div className="container">
                 <ul className="nav nav-tabs">
-                  {/* About Place Link */}
-                  <li className="nav-item">
+                 {/* About Link */}
+                 <li className="nav-item">
                     <a
                       href="#aboutPlace"
-                      className="nave-link active"
+                      className="nav-link active"
                       role="tab"
                       data-toggle="tab"
                     >
@@ -66,7 +68,7 @@ class Details extends Component {
                   <li className="nav-item">
                     <a
                       href="#reviews"
-                      className="nave-link"
+                      className="nav-link"
                       role="tab"
                       data-toggle="tab"
                     >
@@ -77,7 +79,7 @@ class Details extends Component {
                   <li className="nav-item">
                     <a
                       href="#map"
-                      className="nave-link"
+                      className="nav-link"
                       role="tab"
                       data-toggle="tab"
                     >
@@ -105,12 +107,20 @@ class Details extends Component {
 
                   {/* Reviews */}
                   <div className="tab-pane" id="reviews" role="tabpanel">
-                    Reviews Content 
+                    Reviews Content
                   </div>
 
                   {/* Map */}
                   <div className="tab-pane" id="map" role="tabpanel">
-                    <iframe src={maps} style={{border: '0', height: '28.125rem', width: '100%', frameborder: '0' }}></iframe>
+                    <iframe
+                      src={maps}
+                      style={{
+                        border: "0",
+                        height: "28.125rem",
+                        width: "100%",
+                        frameborder: "0",
+                      }}
+                    ></iframe>
                   </div>
                 </div>
               </div>
@@ -124,3 +134,47 @@ class Details extends Component {
 }
 
 export default Details;
+
+const HeaderDetails = styled.header`
+    background: linear-gradient(rgba(109, 109, 109), rgba(255, 255, 255));
+    height: 100vh;
+    text-transform: uppercase;
+    color: var(--mainWhite);
+    text-align: center;
+
+    h1{
+        padding-top: 10%;
+        color: var(--mainDark);
+    }
+
+    h4{
+        color: var(--mainDark);
+    }
+
+    p{
+        padding-left: 10%;
+        padding-right: 10%;
+        margin-bottom: 10%;
+        color: var(--mainDark);
+    }
+
+    i {
+        font-size: 1.875rem;
+        color: var(--mainDark);
+    }
+
+    i:hoover {
+        color: var(--mainBlue);
+        cursor: pointer;
+    }
+
+    .nav-item {
+        height: 18.75rem;
+    }
+
+    @media(max-width: 760px) {
+        h1, h4 {
+          color: var(--mainWhite);  
+        }
+    }
+`;
