@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { Component } from "react";
 
-function NotFoundPage() {
+class NotFoundPage extends Component {
+  render() {
     return (
-        <div>
-            <h1>Not Found Page</h1>
+      <div className="container">
+        <div className="row">
+            <div className="col-md-12">
+                <div className="error-template">
+                    <h1>Ops!</h1>
+                    <h2></h2>
+                </div>
+            </div>
         </div>
-    )
+      </div>
+    );
+  }
 }
 
 export default NotFoundPage;

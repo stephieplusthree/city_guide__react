@@ -1,13 +1,23 @@
-import React from 'react';
-import Footer from '../layouts/Footer';
+import React, { Component } from "react";
+import Footer from "../layouts/Footer";
+import { InfoConsumer } from "../context";
+import NewsCard from "../NewsCard";
 
-function News() {
+class News extends Component {
+  render() {
     return (
-        <div>
-            <h2>News</h2>
-            <Footer />
-        </div>
-    )
+      <div>
+        <InfoConsumer>
+          {(value) => {
+            return value.news.map((item) => {
+              return <NewsCard key={item.id} item={item} />;
+            });
+          }}
+        </InfoConsumer>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default News;
