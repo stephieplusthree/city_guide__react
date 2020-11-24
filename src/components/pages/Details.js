@@ -52,7 +52,7 @@ class Details extends Component {
               </HeaderDetails>
               
               {/* nav link */}
-              <div className="container">
+              <div className="container navigation-links">
                 <ul className="nav nav-tabs">
                  {/* About Link */}
                  <li className="nav-item">
@@ -73,7 +73,7 @@ class Details extends Component {
                       role="tab"
                       data-toggle="tab"
                     >
-                      <Reviews />
+                      Reviews
                     </a>
                   </li>
                   {/* Map Link */}
@@ -108,7 +108,7 @@ class Details extends Component {
 
                   {/* Reviews */}
                   <div className="tab-pane" id="reviews" role="tabpanel">
-                    Reviews Content
+                    <Reviews />
                   </div>
 
                   {/* Map */}
